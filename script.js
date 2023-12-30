@@ -3,13 +3,6 @@ let image = ['./img/1.jpg','./img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jp
 './img/19.jpg','./img/20.jpg','./img/21.jpg','./img/22.jpg','./img/23.jpg','./img/24.jpg','./img/25.jpg','./img/26.jpg','./img/27.jpg',
 './img/28.jpg','./img/29.jpg', './img/30.jpg','./img/31.jpg','./img/32.jpg'];
 
-
-let images = document.querySelector('#imgGallerie');
-let wrapper = document.getElementById('wrapper');
-let imgWrapper = document.getElementById('fullImg');
-let close = document.getElementById('close');
-let img = document.querySelectorAll('img');
-
 function load() {
   let imgGallerie = document.querySelector('#imgGallerie');
   imgGallerie.innerHTML = '';
@@ -19,18 +12,11 @@ function load() {
   }
 }
 
-function openPic(i) {
-  wrapper.innerHTML += `
-  <img src="${image[i]}"><span onclick="closePic()" id="close">X</span>
-`;
-  openModal();
-  load();
+function openPic() {
+  document.getElementById('onePic').classList.add('showOnePic');
+  document.getElementById('onePic').src = this.src;
 }
-function closePic() {
-  wrapper.style.display = 'none';
-  wrapper.innerHTML = '';
-  load();
-}
-function openModal() {
-  wrapper.style.display = 'flex';
-}
+
+  function closePic(){
+      document.getElementById('onePic').classList.remove('showOnePic');
+  }
