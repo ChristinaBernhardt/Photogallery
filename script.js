@@ -19,40 +19,47 @@ function openPic(i) {
   detailContainer.innerHTML = generateDetailViewHTML(i, image);
   detailContainer.classList.remove('d-none');
 
-
-  // document.getElementById('onePic').src = this.src;
-// }
-
-//   function closePic(){
-//       document.getElementById('onePic').classList.remove('showOnePic');
   }
   function generateDetailViewHTML(i, image){
     return /* html */ `
     <div class="detailViewWrapper">
 
-    <div><button onclick="showPreviousPicture(${i})">links</button></div>
+    <div><button onclick="showPreviousPicture(${i})" id="show-button-prev" class="show-button">links</button></div>
     <div class="image-wrapper"><img src=${image} alt="Bild"></div>
-    <div><button onclick="showNextPicture(${i})">rechts</button></div>
+    <div><button onclick="showNextPicture(${i})" id="show-button-next" class="show-button">rechts</button></div>
     <div><button onclick="closePic()">Schließen</button></div>
     </div>`
   }
 
   function showPreviousPicture(i){
-    let image = images[i];
-    let detailContainer =  document.getElementById('onePic');
-    detailContainer.innerHTML = generateDetailViewHTML(i, image);
-    detailContainer.classList.remove('d-none');
+    if (i > 0) {
+      let prev = i - 1;
+      openPic(prev);
+    } 
+    else {if (i = 0){
+           dimmButtonPrev()
+      }
+    }}
 
-  
-  }
   function showNextPicture(i){
-    let image = images[i];
-    let detailContainer =  document.getElementById('onePic');
-    detailContainer.innerHTML = generateDetailViewHTML(i, image);
-    detailContainer.classList.remove('d-none');
-
+    if (i < images.length) {
+    let next = i + 1;
+    openPic(next);}
+    else {if (i == images.length) {
+         dimmButtonNext()
+      }
+    }}
   
-  }
+  
+function dimmButtonPrev(){
+  document.getElementById('show-button-prev').classList.add('d-none');
+
+}
+
+function dimmButtonNext(){
+  document.getElementById('show-button-next').classList.add('d-none');
+
+}
 
   function closePic(i) {
     let image = images[i];
@@ -61,9 +68,4 @@ function openPic(i) {
     detailContainer.classList.add('d-none');
   
   
-    // document.getElementById('onePic').src = this.src;
-  // }
-  
-  //   function closePic(){
-  //       document.getElementById('onePic').classList.remove('showOnePic');
     }

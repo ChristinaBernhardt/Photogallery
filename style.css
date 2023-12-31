@@ -5,7 +5,9 @@
 }
 
 img {
-  max-width: 100%;
+  max-width: 80vh;
+  padding: 16px;
+  
 
 }
 
@@ -31,6 +33,7 @@ footer {
 body {
   font-family: Roboto, sans-serif;
   color: rgb(59, 59, 59);
+  background-color: rgb(202, 202, 202);
   height: 100vh;
   width: 100vw;
   font-size: 16px;
@@ -44,6 +47,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  
 }
 
 .img-gallery img {
@@ -77,9 +81,12 @@ body {
 }
 .image-wrapper {
 display: flex;
+
 }
 .detailViewWrapper{
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+
