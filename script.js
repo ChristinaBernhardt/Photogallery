@@ -32,23 +32,13 @@ function openPic(i) {
   }
 
   function showPreviousPicture(i){
-    if (i > 0) {
-      let prev = i - 1;
-      openPic(prev);
-    } 
-    else {if (i = 0){
-           dimmButtonPrev()
-      }
-    }}
+    let previousIndex = (i - 1 + images.length) % images.length; 
+    openPic(previousIndex);
+}
 
   function showNextPicture(i){
-    if (i < images.length) {
-    let next = i + 1;
-    openPic(next);}
-    else {if (i == images.length) {
-         dimmButtonNext()
-      }
-    }}
+    let nextIndex = (i + 1 + images.length) % images.length;
+      openPic(nextIndex);}
   
   
 function dimmButtonPrev(){
