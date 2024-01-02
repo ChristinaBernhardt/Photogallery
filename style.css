@@ -7,8 +7,6 @@
 img {
   max-width: 80vh;
   padding: 16px;
-  
-
 }
 
 header {
@@ -18,26 +16,34 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 footer {
   height: 50px;
-  width: 100%;
+  width: 100vw;
   background-color: grey;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  }
 
 body {
   font-family: Roboto, sans-serif;
   color: rgb(59, 59, 59);
   background-color: rgb(202, 202, 202);
-  height: 100vh;
+  min-height: calc(100vh - 100px);
   width: 100vw;
   font-size: 16px;
   overflow-x: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 
@@ -89,4 +95,11 @@ display: flex;
   justify-content: center;
 }
 
+.show-button{
+  width: 100px;
+  height: 100px;
+}
 
+.show-button:hover {
+  cursor: pointer;
+}
